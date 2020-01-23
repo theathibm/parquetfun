@@ -1,6 +1,7 @@
 
 
 def main():
+  print ("What the heck")
   print( "Hello World!" )
   peopleDF = spark.read.json("examples/src/main/resources/people.json")
 
