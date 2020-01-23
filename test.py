@@ -7,7 +7,7 @@ def main():
   spark = SparkSession(sc)
   print ("What the heck")
   print( "Hello World!" )
-  peopleDF = spark.read.json("examples/src/main/resources/people.json")
+  peopleDF = spark.read.json("/opt/spark/examples/src/main/resources/people.json")
 
   # DataFrames can be saved as Parquet files, maintaining the schema information.
   peopleDF.write.parquet("people.parquet")
