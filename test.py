@@ -1,6 +1,10 @@
 from pyspark.sql import SparkSession
+from pyspark.context import SparkContext
+from pyspark.sql.session import SparkSession
 
 def main():
+  sc = SparkContext.getOrCreate()
+  spark = SparkSession(sc)
   print ("What the heck")
   print( "Hello World!" )
   peopleDF = spark.read.json("examples/src/main/resources/people.json")
@@ -22,6 +26,7 @@ def main():
   # +------+
   # |Justin|
   # +------+
-  
+  sc.stop()
+
 if __name__== "__main__":
   main()
